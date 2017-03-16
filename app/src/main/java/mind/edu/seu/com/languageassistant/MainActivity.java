@@ -1,10 +1,7 @@
 package mind.edu.seu.com.languageassistant;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -13,11 +10,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private RadioButton file_button;
+    private RadioButton record_button;
+    private RadioButton my_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,27 +34,68 @@ public class MainActivity extends AppCompatActivity
 
 
         //Fragment+ViewPager+FragmentViewPager组合的使用
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
+        final ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
         MyFragmentPagerAdapter adapter = new MyFragmentPagerAdapter(getSupportFragmentManager(),
                 this);
         viewPager.setAdapter(adapter);
+        //粗鲁button翻页
+       record_button= (RadioButton) findViewById(R.id.record_pg);
+        my_button= (RadioButton) findViewById(R.id.my_pg);
+        file_button= (RadioButton) findViewById(R.id.file_pg);
+        file_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int i=viewPager.getCurrentItem();
+                if (1==i)
+                    viewPager.arrowScroll(1);
+                else {
+                    if (2==i){
+                        viewPager.arrowScroll(1);
+                    viewPager.arrowScroll(1);}
+                }
+            }
+        });
+        record_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int i=viewPager.getCurrentItem();
+                if (0==i)
+                viewPager.arrowScroll(2);
+                else {
+                    if (2==i)
+                        viewPager.arrowScroll(1);
+                }
+            }
+        });
 
-        //TabLayout
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        tabLayout.setupWithViewPager(viewPager);
+        my_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int i=viewPager.getCurrentItem();
+                if (0==i) {
+                    viewPager.arrowScroll(2);
+                    viewPager.arrowScroll(2);
+                }
+                else {
+                    if (1==i)
+                        viewPager.arrowScroll(2);
+                }
+            }
+        });
+
 
         //对于api23以上的版本调用以下的方法，不调用4.4版本的兼容,toolbar沉浸式状态栏
         // StatusBarCompat.compat(this);
 
         //悬浮的按钮设置监听内容
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
         //  DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         //toggle 是drawer的监听事件

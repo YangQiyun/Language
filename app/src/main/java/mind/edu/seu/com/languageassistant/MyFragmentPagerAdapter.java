@@ -11,7 +11,6 @@ import android.view.ViewGroup;
  */
 class MyFragmentPagerAdapter extends FragmentPagerAdapter {
     public final int COUNT = 3;
-    private String[] titles = new String[]{"菜单", "论坛", "寻物启事"};
     private Context context;
 
     public MyFragmentPagerAdapter(FragmentManager fm, Context context) {
@@ -28,8 +27,10 @@ class MyFragmentPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if(position==0)
-            return  TestFragment.newInstance(position);
-        return PageFragment.newInstance(position+2);
+            return  FirstFragment.newInstance(position);
+        if(position==1)
+            return  new SecondFragment();
+        return new Fragment();
     }
 
     @Override
@@ -37,8 +38,6 @@ class MyFragmentPagerAdapter extends FragmentPagerAdapter {
         return COUNT;
     }
 
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return titles[position];
-    }
+
+
 }

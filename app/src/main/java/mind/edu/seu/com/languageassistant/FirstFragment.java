@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by 杨棋允 on 2017/3/15.
  */
-public class TestFragment extends Fragment {
+public class FirstFragment extends Fragment {
     public static final String ARGS_PAGE = "scrollToPosition";
     private RecyclerView recyclerView;
     private List<News> newsList;
@@ -23,11 +23,11 @@ public class TestFragment extends Fragment {
     private  View mView;
 
 
-    public static TestFragment newInstance(int page) {
+    public static FirstFragment newInstance(int page) {
         Bundle args = new Bundle();
 
         args.putInt(ARGS_PAGE, page);
-        TestFragment fragment = new TestFragment();
+        FirstFragment fragment = new FirstFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -41,8 +41,7 @@ public class TestFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.content_main, container, false);
-
+        mView = inflater.inflate(R.layout.fragment_one, container, false);
         initView();
         return mView;
     }
