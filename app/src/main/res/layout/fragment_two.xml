@@ -30,6 +30,7 @@
             android:layout_weight="1"/>
 
         <EditText
+            android:id="@+id/fragTwo_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="16.67"
@@ -45,16 +46,16 @@
         android:background="@color/background_init">
 
         <ImageButton
-            android:id="@+id/pauseBtn"
+            android:id="@+id/fragTwo_pauseBtn"
             android:background="@mipmap/pause_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="65dp"
             android:layout_centerVertical="true"
-            android:layout_toStartOf="@+id/startBtn" />
+            android:layout_toStartOf="@+id/fragTwo_startBtn" />
 
         <ImageButton
-            android:id="@+id/startBtn"
+            android:id="@+id/fragTwo_startBtn"
             android:background="@mipmap/start_btn"
 
             android:layout_height="wrap_content"
@@ -62,7 +63,7 @@
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
 
-        <Button android:id="@+id/endBtn"
+        <Button android:id="@+id/fragTwo_endBtn"
             android:width="45dp"
             android:height="27dp"
             android:text="完成"
@@ -74,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="65dp"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/startBtn" />
+            android:layout_toEndOf="@+id/fragTwo_startBtn" />
     </RelativeLayout>
 
 </LinearLayout>

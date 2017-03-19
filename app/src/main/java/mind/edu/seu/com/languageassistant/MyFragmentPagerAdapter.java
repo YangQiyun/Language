@@ -6,6 +6,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.view.ViewGroup;
 
+import mind.edu.seu.com.languageassistant.SecondFragment.SecondFragment;
+
 /**
  * Created by Mind on 2017/3/15.
  */
