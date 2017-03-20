@@ -41,11 +41,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public NewsViewHolder(final View itemView) {
             super(itemView);
             cardView= (CardView) itemView.findViewById(R.id.card_view);
-//            news_photo= (ImageView) itemView.findViewById(R.id.news_photo);
-//            news_title= (TextView) itemView.findViewById(R.id.news_title);
-//            news_desc= (TextView) itemView.findViewById(R.id.news_desc);
-//            share= (Button) itemView.findViewById(R.id.btn_share);
-//            readMore= (Button) itemView.findViewById(R.id.btn_more);
+            news_photo= (ImageView) itemView.findViewById(R.id.news_photo);
+            news_title= (TextView) itemView.findViewById(R.id.news_title);
+            news_desc= (TextView) itemView.findViewById(R.id.news_desc);
+            share= (Button) itemView.findViewById(R.id.btn_share);
+            readMore= (Button) itemView.findViewById(R.id.btn_more);
             //设置TextView背景为半透明
             news_title.setBackgroundColor(Color.argb(20, 0, 0, 0));
 

@@ -10,13 +10,13 @@
     </style>
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- toolbar（actionbar）颜色 -->
-        <item name="colorPrimary">@color/header</item>
+        <item name="colorPrimary">@color/titleGreen</item>
         <!-- 状态栏颜色 -->
-      <item name="colorPrimaryDark">@color/header</item>
+      <item name="colorPrimaryDark">@color/titleGreen</item>
         <!--toolbar文字的颜色-->
-        <item name="@android:textColorPrimary">#000000</item>
+        <item name="@android:textColorPrimary">@color/black</item>
         <!-- 窗口的背景颜色 -->
-        <item name="android:windowBackground">@color/header</item>
+        <item name="android:windowBackground">@color/titleGreen</item>
         <!--toolbar上菜单文字的颜色-->
         <item name="actionMenuTextColor">#000000</item>
         <item name="colorAccent">#FF4081</item>
