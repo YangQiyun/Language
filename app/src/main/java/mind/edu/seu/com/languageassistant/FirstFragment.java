@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,12 +36,16 @@ public class FirstFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.fragment_one, container, false);
+       mView = inflater.inflate(R.layout.fragment_one, container, false);
+
         initView();
         return mView;
     }
